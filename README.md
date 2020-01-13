@@ -6,7 +6,7 @@ Our group decided to create a data visualization dashboard for NBA players salar
 
 **We were also able to create a special feature we like to call _________ more clearly described below in the Project Features section.**
 
-## Getting Started
+## Project Details
 
 ### Gathering Data
 Our data sources for this extraction came from *Kaggle* which gave us detailed and advanced player stats from the 1950’s  all the way through the 2018-2019 NBA season for all players. For the information of the stats it gave information on everything from points scored in a game to how many minutes they played each game… etc. The other source we used was *Basketball-Reference*. This resource provided contract information for the 2019-2024 seasons.  
