@@ -11,6 +11,8 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+from flask_marshmallow import Marshmallow
+
 app = Flask(__name__)
 
 
@@ -78,6 +80,11 @@ Base.prepare(db.engine, reflect=True)
 # Save references to each table
 players = Base.classes.players
 
+ma = Marshmallow(app)
+
+@app.route("/build_player")
+def new():
+    return render_template("SQLite_with_regression_MM.ipynb")
 
 @app.route("/")
 def index():
@@ -118,11 +125,6 @@ def index8():
 def index9():
     
     return render_template("index9_team_salary_stacked.html")
-
-
-
-
-
 
 @app.route("/player1")  # select * from players
 def player1():
