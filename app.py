@@ -83,21 +83,24 @@ players = Base.classes.players
 
 @app.route('/predict', methods=['GET','POST'])
 def predict():
+    results = ''
     if request.method == 'POST':
-        age = request.form["age"]
-        pts = request.form["pts"]
-        reb = request.form["reb"]
-        ast = request.form["ast"]
-        plm = request.form["plm"]
+        age = float(request.form["age"])
+        pts = float(request.form["pts"])
+        reb = float(request.form["reb"])
+        ast = float(request.form["ast"])
+        plm = float(request.form["plm"])
 
-        player = Player(age=age, pts=pts, reb=reb, ast=ast, plm=plm)
-        stmt = db.session.query(players).statement
-        df = pd.read_sql_query(stmt, db.session.bind)     
-        query = df.to_json(orient="records")
-        prediction = clf.predict(query)
-        return jsonify({'prediction':list(prediction)})
+        # player = Player(age=age, pts=pts, reb=reb, ast=ast, plm=plm)
+        # stmt = db.session.query(players).statement
+        # df = pd.read_sql_query(stmt, db.session.bind)     
+        # query = df.to_json(orient="records")
+        data = np.array([age,pts,reb,ast,plm]).reshape(1,-1)
+        results = clf.predict(data)[0]
+        # prediction = clf.predict(data)[0]
+        # return jsonify({'prediction':list(prediction)})
 
-    return render_template("form.html")
+    return render_template("form.html", results=results)
 
     
 

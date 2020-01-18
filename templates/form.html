@@ -1,4 +1,4 @@
-<form method="POST" action="/salary_generator">
+<form method="POST" action="/predict">
 
     <label for="inputAge">Age</label>
     <input type="integer" id="inputAge" name="age" placeholder="Age">
@@ -18,3 +18,6 @@
     <input type="submit" value="Calculate">
 
 </form>
+
+<h2>The player's salary prediction is:</h2>
+{{results}}
