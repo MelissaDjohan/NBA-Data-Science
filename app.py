@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
-from flask_marshmallow import Marshmallow
+from sklearn.externals import joblib
 
 app = Flask(__name__)
 
@@ -80,11 +80,16 @@ Base.prepare(db.engine, reflect=True)
 # Save references to each table
 players = Base.classes.players
 
-ma = Marshmallow(app)
 
-@app.route("/build_player")
-def new():
-    return render_template("SQLite_with_regression_MM.ipynb")
+@app.route('/predict', methods=['POST'])
+def predict():
+    stmt = db.session.query(players).statement
+    df = pd.read_sql_query(stmt, db.session.bind)     
+    query = df.to_json(orient="records")
+    prediction = clf.predict(query)
+    return jsonify({'prediction':list(prediction)})
+
+    
 
 @app.route("/")
 def index():
@@ -169,4 +174,5 @@ def player4():
    
 
 if __name__ == "__main__":
+    clf = joblib.load('model.pkl')
     app.run()
