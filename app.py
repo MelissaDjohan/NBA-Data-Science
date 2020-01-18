@@ -8,7 +8,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 from sklearn.externals import joblib
@@ -81,9 +81,9 @@ Base.prepare(db.engine, reflect=True)
 players = Base.classes.players
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
-    if request.method == 'POST'
+    if request.method == 'POST':
         age = request.form["age"]
         pts = request.form["pts"]
         reb = request.form["reb"]
