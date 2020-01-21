@@ -31,7 +31,7 @@ d3.json("/player2").then(function (response) {
         };
 
         var layout = {
-                title: 'Salary v. Draft Year',
+                title: 'Salary by Draft Year',
                 showlegend: false,
                 height: 600,
                 // width: 800,

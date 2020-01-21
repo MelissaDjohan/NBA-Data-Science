@@ -1,23 +1,64 @@
-<form method="POST" action="/predict">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Input Form</title>
+        <link rel="stylesheet" href="static/css/form.css">
+    </head>
+    <body>
+        <div class="menu-bar">
+            <div class="title">
+                <h1>Salary Generator</h1>
+            </div>
+            <ul class="bar">
+                <!-- <div class="menu-items"> -->
+                
+                <li><a href="/">Player Search</a></li>
+                <li><a href="/predict">Salary Generator</a></li>
+                <li><a href="/ppg">Points per Game</a></li>
+                <li><a href="/age">Age</a></li>
+                <li><a href="/height">Height</a></li>
+                <li><a href="/plusminus">Plus Minus</a></li>
+                <li><a href="/serviceline">Years of Service</a></li>
+                            
+                <!-- </div> -->
+            </ul>
+        </div>
+        <div class="box">
+            <form method="POST" action="/predict">
 
-    <label for="inputAge">Age</label>
-    <input type="integer" id="inputAge" name="age" placeholder="Age">
+                <div class="inputBox">
+                    <label for="inputAge">Age</label>
+                    <input type="integer" id="inputAge" name="age" placeholder="Age" required="">
+                </div>
 
-    <label for="inputPts">Points</label>
-    <input type="integer" id="inputPts" name="pts" placeholder="Points">
+                <div class="inputBox">
+                    <label for="inputPts">Points</label>
+                    <input type="integer" id="inputPts" name="pts" placeholder="Points" required="">
+                </div>
 
-    <label for="inputReb">Rebounds</label>
-    <input type="integer" id="inputReb" name="reb" placeholder="Rebounds">
+                <div class="inputBox">
+                    <label for="inputReb">Rebounds</label>
+                    <input type="integer" id="inputReb" name="reb" placeholder="Rebounds" required="">
+                </div>
 
-    <label for="inputAst">Assists</label>
-    <input type="integer" id="inputAst" name="ast" placeholder="Assists">
+                <div class="inputBox">
+                    <label for="inputAst">Assists</label>
+                    <input type="integer" id="inputAst" name="ast" placeholder="Assists" required="">
+                </div>
 
-    <label for="inputPlm">Plus-minus</label>
-    <input type="integer" id="inputPlm" name="plm" placeholder="Plus-minus">
+                <div class="inputBox">
+                    <label for="inputPlm">Plus-minus</label>
+                    <input type="integer" id="inputPlm" name="plm" placeholder="Plus-minus" required="">
+                </div>
 
-    <input type="submit" value="Calculate">
+                <input type="submit" value="Calculate">
 
-</form>
 
-<h2>The player's salary prediction is:</h2>
-{{results}}
+            </form>
+
+            <h2>The player's salary prediction is:</h2>
+            <h2>{{results}}</h2>
+        </div>
+    </body>
+</html>
