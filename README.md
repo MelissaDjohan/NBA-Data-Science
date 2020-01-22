@@ -1,5 +1,10 @@
 ![NBA_Logo](NBA_Logo.jpg)
 
+### Authors (ordered alphabetically by last name)
+- Melissa Djohan (https://www.linkedin.com/in/melissa-djohan-751104124/)
+- Tyler Fasulo (https://www.linkedin.com/in/tyler-fasulo/)
+- Luan Hajnaj (https://www.linkedin.com/in/luanhajnaj/)
+
 # NBA Players Salary and Stats
 
 Our group decided to create a data visualization dashboard for NBA players salaries, stats and basic information. During the process of providing all this information we had to import CSV files, rename multiple column headers and merge the three different pandas dataframes into one dataframe. 
@@ -28,8 +33,3 @@ In addition, we have created a ***Salary Generator*** feature that will be able 
 
 ### Full Data Set
 https://github.com/MelissaDjohan/NBA-Data-Science/blob/master/output.xlsx
-
-### Authors (ordered alphabetically by last name)
-- Melissa Djohan
-- Tyler Fasulo
-- Luan Hajnaj
