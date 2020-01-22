@@ -1,7 +1,7 @@
 ![NBA_Logo](NBA_Logo.jpg)
 
 ### Authors (ordered alphabetically by last name)
-- Melissa Djohan (https://www.linkedin.com/in/melissa-djohan-751104124/)
+- Melissa Djohan (https://www.linkedin.com/in/melissadjohan/)
 - Tyler Fasulo (https://www.linkedin.com/in/tyler-fasulo/)
 - Luan Hajnaj (https://www.linkedin.com/in/luanhajnaj/)
 
