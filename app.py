@@ -81,9 +81,9 @@ Base.prepare(db.engine, reflect=True)
 players = Base.classes.players
 
 
-@app.route('/predict', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def predict():
-    results = ''
+    salary = ''
     if request.method == 'POST':
         age = float(request.form["age"])
         pts = float(request.form["pts"])
@@ -96,15 +96,16 @@ def predict():
         # df = pd.read_sql_query(stmt, db.session.bind)     
         # query = df.to_json(orient="records")
         data = np.array([age,pts,reb,ast,plm]).reshape(1,-1)
-        results = clf.predict(data)[0]
+        results = int(clf.predict(data)[0])
         # prediction = clf.predict(data)[0]
         # return jsonify({'prediction':list(prediction)})
+        salary = f"${results:,}"
 
-    return render_template("form.html", results=results)
+    return render_template("form.html", salary=salary)
 
     
 
-@app.route("/")
+@app.route("/player_search")
 def index():
     """Return the homepage."""
     return render_template("index.html")

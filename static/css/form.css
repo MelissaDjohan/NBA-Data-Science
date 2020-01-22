@@ -11,7 +11,7 @@ body
 .box
 {
     position: absolute;
-    top: 70%;
+    top: 65%;
     left: 75%;
     transform: translate(-50%,-50%);
     width: 400px;
@@ -21,7 +21,7 @@ body
     border-radius: 10px;
 }
 
-.box h2
+.box h3
 {
     margin: 0 0 30px;
     padding: 0;
@@ -40,7 +40,7 @@ body
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     border: 1px solid #fff;
     outline: none;
     background: transparent;
@@ -82,7 +82,7 @@ body
     text-align: center;
 }
 .active, .menu-bar ul li:hover {
-    background: #2bab0d;
+    background: #1D428A;
     border-radius: 3px;
 }
 .title {
